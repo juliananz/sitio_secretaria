@@ -1,0 +1,11 @@
+# macOS junk
+__MACOSX/
+.DS_Store
+
+# Temp / build artifacts
+*.tmp
+_site/
+node_modules/
+
+# Quarantined (kept on disk, out of version control)
+_quarantine/
