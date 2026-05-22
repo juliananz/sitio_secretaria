@@ -302,6 +302,29 @@
         .sitio-link span { font-weight: 600; font-size: 0.98rem; }
         .sitio-link small { display: block; color: var(--texto-suave); font-weight: 400; }
 
+        /* ---- Atención Ciudadana (Unidad de Género / QuejaNet) ---- */
+        .servicio-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .servicio-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .servicio-card p { color: var(--texto-suave); font-size: 0.95rem; }
+        .servicio-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--borde);
+            margin-bottom: 1.1rem;
+        }
+        .servicio-card .servicio-qr {
+            width: 130px;
+            border-radius: 8px;
+            border: 1px solid var(--borde);
+            margin-bottom: 1.1rem;
+        }
+        .servicio-card .btn { margin-top: auto; }
+
         /* ============================================================
            FOOTER — BLOQUEADO (fondo dorado oscuro, contacto institucional)
            ============================================================ */
@@ -554,8 +577,40 @@
         </div>
     </section>
 
-    <!-- ===== SITIOS DE INTERÉS ===== -->
+    <!-- ===== ATENCIÓN CIUDADANA (Unidad de Género / QuejaNet) ===== -->
     <section class="alt">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Atención Ciudadana</h2>
+            <p class="seccion-intro">
+                Mecanismos de igualdad y de atención a sugerencias, quejas y denuncias.
+            </p>
+            <div class="grid-2">
+                <div class="card servicio-card">
+                    <img class="servicio-img" src="img/UGénero.png" alt="Unidad de Igualdad de Género">
+                    <h3>Unidad de Igualdad de Género</h3>
+                    <p>
+                        La Unidad de Igualdad de Género promueve la perspectiva de género y la
+                        igualdad sustantiva entre mujeres y hombres en las acciones de la Secretaría
+                        de Economía.
+                    </p>
+                </div>
+                <div class="card servicio-card">
+                    <img class="servicio-qr" src="img/qr.png" alt="Código QR de QuejaNet Coahuila">
+                    <h3>QuejaNet Coahuila</h3>
+                    <p>
+                        Buzón electrónico de sugerencias, quejas y denuncias. Escanea el código QR o
+                        ingresa al sistema para presentar tu solicitud.
+                    </p>
+                    <a class="btn" href="https://sidqcs.tramitescoahuila.gob.mx/sidqcs/?id=E0075" target="_blank" rel="noopener">
+                        Ir a QuejaNet <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SITIOS DE INTERÉS ===== -->
+    <section>
         <div class="contenedor">
             <h2 class="seccion-titulo">Sitios de Interés</h2>
             <p class="seccion-intro">
