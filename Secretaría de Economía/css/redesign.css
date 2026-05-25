@@ -101,6 +101,16 @@ a { color: inherit; }
 .icon-menu { display: none; }
 
 /* ============================================================
+   PORTADA — banner de ancho completo (debajo de la navegación)
+   ============================================================ */
+.portada {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ============================================================
    HERO / BANNER — rediseñado
    ============================================================ */
 .hero {

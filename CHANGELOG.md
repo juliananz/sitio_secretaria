@@ -11,6 +11,12 @@ across all changes unless explicitly authorized.
 ## [Unreleased] — branch `module-1-redesign-poc`
 
 ### Added
+- Added a full-width portada banner (`img/Economía_Portada.png`) to
+  `index-propuesta.html`, between the nav and the hero, mirroring how the
+  production `index.html` uses it. Added a `.portada` rule to `css/redesign.css`
+  (full-width, responsive). Path corrected to `img/…` (no root `img/` exists)
+  and a descriptive `alt` added for accessibility; administration branding
+  overlays in the image are preserved.
 - Replicated the redesign language across the whole site: 20 new standalone
   `*-propuesta.html` review pages that share `css/redesign.css`. Originals are
   left untouched; the redesign is fully additive. Inter typography, locked
