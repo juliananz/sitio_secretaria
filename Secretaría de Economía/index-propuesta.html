@@ -14,395 +14,8 @@
     <!-- Font Awesome (mismo kit que producción) -->
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 
-    <style>
-        /* ============================================================
-           PALETA INSTITUCIONAL (bloqueada por branding)
-           ============================================================ */
-        :root {
-            --gold: #DAAB06;        /* primario */
-            --gold-dark: #BF8B00;   /* dorado oscuro */
-            --texto: #2b2b2b;
-            --texto-suave: #5c5c5c;
-            --borde: #e1e1e1;
-            --fondo-suave: #f7f7f7;
-            --blanco: #ffffff;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        html { font-size: 16px; scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-            color: var(--texto);
-            line-height: 1.7;
-            background-color: var(--blanco);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3, h4 { font-weight: 700; line-height: 1.25; }
-        h2 { font-weight: 600; }
-        p { margin-bottom: 1rem; }
-        a { color: inherit; }
-
-        .contenedor {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* ============================================================
-           AVISO DE VISTA PREVIA (no producción)
-           ============================================================ */
-        .aviso-preview {
-            background-color: #ececec;
-            color: #555;
-            text-align: center;
-            font-size: 0.78rem;
-            letter-spacing: 0.02em;
-            padding: 0.4rem 1rem;
-            border-bottom: 1px solid #dcdcdc;
-        }
-
-        /* ============================================================
-           HEADER — BLOQUEADO (3 logos, fondo dorado #DAAB06)
-           ============================================================ */
-        .header {
-            background-color: var(--gold);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0.6rem 1rem;
-        }
-        .header a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4%;
-            width: 100%;
-            max-width: 1140px;
-        }
-        .header__logoss { width: 11%; max-width: 130px; height: auto; }
-        .header__logos  { width: 39%; max-width: 430px; height: auto; }
-        .header__logo   { width: 30%; max-width: 330px; height: auto; }
-
-        /* ============================================================
-           NAVEGACIÓN — BLOQUEADA (fondo dorado oscuro, 8 enlaces)
-           ============================================================ */
-        .nav-bg { background-color: var(--gold-dark); }
-        .navegacion {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-        .navegacion a {
-            display: block;
-            color: #1f1f1f;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.01em;
-            padding: 0.95rem 1.1rem;
-            transition: all 0.2s ease;
-        }
-        .navegacion a:hover { background-color: rgba(0,0,0,0.12); }
-        .navegacion a.activo { box-shadow: inset 0 -3px 0 #1f1f1f; }
-        .icon-menu { display: none; }
-
-        /* ============================================================
-           HERO / BANNER — rediseñado (sin la portada de 8 MB)
-           ============================================================ */
-        .hero {
-            background-color: var(--blanco);
-            border-bottom: 1px solid var(--borde);
-            padding: 4rem 0;
-            position: relative;
-        }
-        .hero::before {
-            content: "";
-            position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 8px;
-            background-color: var(--gold);
-        }
-        .hero__inner { text-align: left; }
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.4rem);
-            color: var(--texto);
-            letter-spacing: -0.01em;
-        }
-        .hero .subtitulo {
-            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-            font-weight: 500;
-            color: var(--gold-dark);
-            margin-top: 0.4rem;
-        }
-        .hero .lede {
-            margin-top: 1.5rem;
-            max-width: 760px;
-            color: var(--texto-suave);
-            font-size: 1.05rem;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 1.5rem;
-            background-color: var(--gold);
-            color: #1f1f1f;
-            font-weight: 600;
-            text-decoration: none;
-            padding: 0.75rem 1.6rem;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-        }
-        .btn:hover { background-color: var(--gold-dark); transform: translateY(-2px); }
-
-        /* ============================================================
-           ESTRUCTURA DE SECCIONES
-           ============================================================ */
-        section { padding: 3.5rem 0; }
-        .seccion-titulo {
-            font-size: 1.7rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        .seccion-titulo::after {
-            content: "";
-            display: block;
-            width: 56px;
-            height: 4px;
-            background-color: var(--gold);
-            border-radius: 2px;
-            margin-top: 0.6rem;
-        }
-        .seccion-intro {
-            color: var(--texto-suave);
-            max-width: 760px;
-            margin-bottom: 2rem;
-        }
-        .alt { background-color: var(--fondo-suave); }
-
-        /* ---- Tarjetas base ---- */
-        .card {
-            background-color: var(--blanco);
-            border: 1px solid var(--borde);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.2s ease;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-            border-color: #d0d0d0;
-        }
-
-        /* ---- Misión / Visión: dos tarjetas lado a lado ---- */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        .mv-card .mv-icono {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 0.8rem;
-        }
-        .mv-card h3 { font-size: 1.3rem; margin-bottom: 0.6rem; }
-        .mv-card p { color: var(--texto-suave); margin-bottom: 0; }
-
-        /* ---- Semblanza del Secretario ---- */
-        .semblanza {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-        .semblanza__foto {
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid var(--borde);
-            object-fit: cover;
-        }
-        .semblanza__nombre {
-            font-size: 1.5rem;
-            display: inline-block;
-            border-bottom: 3px solid var(--gold);
-            padding-bottom: 0.3rem;
-            margin-bottom: 0.2rem;
-        }
-        .semblanza__cargo {
-            color: var(--gold-dark);
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-        }
-        .semblanza__bio p { color: var(--texto-suave); font-size: 0.97rem; }
-        .semblanza__bio em { color: var(--texto); }
-
-        /* ---- Áreas de Atención: rejilla de tarjetas con icono ---- */
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 1.5rem;
-        }
-        .area-card {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .area-card .area-icono {
-            width: 56px; height: 56px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%;
-            background-color: rgba(218,171,6,0.12);
-            color: var(--gold-dark);
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-        .area-card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
-        .area-card p { color: var(--texto-suave); font-size: 0.92rem; margin-bottom: 0; }
-        .area-card .area-mas {
-            display: inline-block;
-            margin-top: 0.9rem;
-            color: var(--gold-dark);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .area-card:hover .area-mas { text-decoration: underline; }
-
-        /* ---- Sitios de Interés ---- */
-        .sitios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-        .sitio-link {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            color: inherit;
-            background-color: var(--blanco);
-            border: 1px solid var(--borde);
-            border-radius: 12px;
-            padding: 1.25rem 1.4rem;
-            transition: all 0.2s ease;
-        }
-        .sitio-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 22px rgba(0,0,0,0.07);
-            border-color: var(--gold);
-        }
-        .sitio-link i {
-            font-size: 1.5rem;
-            color: var(--gold-dark);
-            flex-shrink: 0;
-        }
-        .sitio-link span { font-weight: 600; font-size: 0.98rem; }
-        .sitio-link small { display: block; color: var(--texto-suave); font-weight: 400; }
-
-        /* ---- Atención Ciudadana (Unidad de Género / QuejaNet) ---- */
-        .servicio-card {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .servicio-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-        .servicio-card p { color: var(--texto-suave); font-size: 0.95rem; }
-        .servicio-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid var(--borde);
-            margin-bottom: 1.1rem;
-        }
-        .servicio-card .servicio-qr {
-            width: 130px;
-            border-radius: 8px;
-            border: 1px solid var(--borde);
-            margin-bottom: 1.1rem;
-        }
-        .servicio-card .btn { margin-top: auto; }
-
-        /* ============================================================
-           FOOTER — BLOQUEADO (fondo dorado oscuro, contacto institucional)
-           ============================================================ */
-        .footer {
-            background-color: var(--gold-dark);
-            color: #1f1f1f;
-            padding: 2.5rem 0 1.5rem;
-            margin-top: 1rem;
-        }
-        .footer h3 {
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .footer__cols {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            text-align: center;
-        }
-        .footer__cols .titulo {
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.04em;
-        }
-        .footer__cols p { font-size: 0.92rem; margin-bottom: 0; }
-        .footer__redes {
-            text-align: center;
-            margin-top: 1.8rem;
-        }
-        .footer__redes a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px; height: 42px;
-            border-radius: 50%;
-            background-color: rgba(0,0,0,0.12);
-            color: #1f1f1f;
-            margin: 0 0.3rem;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        .footer__redes a:hover { background-color: #1f1f1f; color: var(--gold); transform: translateY(-2px); }
-        .footer__nota {
-            text-align: center;
-            font-size: 0.78rem;
-            margin-top: 1.8rem;
-            color: rgba(0,0,0,0.55);
-        }
-
-        /* ============================================================
-           RESPONSIVE — colapsa a una columna por debajo de 768px
-           ============================================================ */
-        @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; }
-            .semblanza { grid-template-columns: 1fr; gap: 1.2rem; }
-            .semblanza__foto { max-width: 240px; }
-
-            .header a { flex-wrap: wrap; gap: 2%; }
-            .header__logoss { width: 18%; }
-            .header__logos  { width: 55%; }
-            .header__logo   { width: 40%; }
-
-            /* Hamburguesa visible (sin JS en este POC) */
-            .navegacion { justify-content: space-between; }
-            .icon-menu {
-                display: inline-flex;
-                align-items: center;
-                color: #1f1f1f;
-                font-size: 1.4rem;
-                padding: 0.95rem 1.1rem;
-                cursor: pointer;
-            }
-        }
-    </style>
+    <!-- Hoja de estilos compartida del rediseño -->
+    <link rel="stylesheet" href="css/redesign.css">
 </head>
 <body>
 
@@ -413,7 +26,7 @@
 
     <!-- ===== HEADER (BLOQUEADO) ===== -->
     <header class="header">
-        <a href="index.html" aria-label="Secretaría de Economía de Coahuila — Inicio">
+        <a href="index-propuesta.html" aria-label="Secretaría de Economía de Coahuila — Inicio">
             <img class="header__logoss" src="img/A-PASOS-DE-GIGANTE_BLANCO.png" alt="A pasos de gigante">
             <img class="header__logos" src="img/LOGOTIPO-PRINCIPAL-BLANCO.png" alt="Gobierno de Coahuila">
             <img class="header__logo" src="img/WEQ.png" alt="WEQ">
@@ -424,14 +37,14 @@
     <div class="nav-bg">
         <nav class="navegacion contenedor">
             <span class="icon-menu" aria-hidden="true"><i class="fas fa-bars"></i></span>
-            <a href="index.html" class="activo">Inicio</a>
-            <a href="programas.html">Programas</a>
-            <a href="invest.html">Invierte en Coahuila</a>
-            <a href="directorio.html">Directorio</a>
-            <a href="indicadores.html">Indicadores</a>
+            <a href="index-propuesta.html" class="activo">Inicio</a>
+            <a href="programas-propuesta.html">Programas</a>
+            <a href="invest-propuesta.html">Invierte en Coahuila</a>
+            <a href="directorio-propuesta.html">Directorio</a>
+            <a href="indicadores-propuesta.html">Indicadores</a>
             <a href="https://coahuila.gob.mx/">Gobierno de Coahuila</a>
             <a href="https://www.congresocoahuila.gob.mx/coahuila/leyes.html">Leyes Estatales</a>
-            <a href="Transparencia.html">Transparencia</a>
+            <a href="Transparencia-propuesta.html">Transparencia</a>
         </nav>
     </div>
 
@@ -447,7 +60,7 @@
                 sustentabilidad y desarrollo competitivo equilibrado, para generar empleos
                 productivos, atraer nueva inversión y acrecentar las cadenas de valor.
             </p>
-            <a href="invest.html" class="btn">Invierte en Coahuila</a>
+            <a href="invest-propuesta.html" class="btn">Invierte en Coahuila</a>
         </div>
     </section>
 
@@ -495,25 +108,25 @@
                 Explora los servicios y recursos que ofrece la Secretaría de Economía.
             </p>
             <div class="grid-cards">
-                <a class="area-card card" href="programas.html">
+                <a class="area-card card" href="programas-propuesta.html">
                     <div class="area-icono"><i class="fas fa-list-check"></i></div>
                     <h3>Programas</h3>
                     <p>Apoyos y programas para el desarrollo económico y empresarial del estado.</p>
                     <span class="area-mas">Ver programas <i class="fas fa-arrow-right"></i></span>
                 </a>
-                <a class="area-card card" href="invest.html">
+                <a class="area-card card" href="invest-propuesta.html">
                     <div class="area-icono"><i class="fas fa-handshake"></i></div>
                     <h3>Invierte en Coahuila</h3>
                     <p>Información estratégica por región para la atracción de inversión.</p>
                     <span class="area-mas">Conoce más <i class="fas fa-arrow-right"></i></span>
                 </a>
-                <a class="area-card card" href="directorio.html">
+                <a class="area-card card" href="directorio-propuesta.html">
                     <div class="area-icono"><i class="fas fa-address-book"></i></div>
                     <h3>Directorio</h3>
                     <p>Contacto de las áreas y funcionarios de la Secretaría de Economía.</p>
                     <span class="area-mas">Ver directorio <i class="fas fa-arrow-right"></i></span>
                 </a>
-                <a class="area-card card" href="indicadores.html">
+                <a class="area-card card" href="indicadores-propuesta.html">
                     <div class="area-icono"><i class="fas fa-chart-column"></i></div>
                     <h3>Indicadores</h3>
                     <p>Datos e indicadores económicos del estado de Coahuila.</p>
@@ -527,7 +140,6 @@
     <section>
         <div class="contenedor">
             <h2 class="seccion-titulo">Semblanza del Secretario</h2>
-            <p class="seccion-intro"></p>
             <div class="card semblanza">
                 <img class="semblanza__foto" src="img/LEOM.jpg" alt="Luis Eduardo Olivares Martínez, Secretario de Economía">
                 <div>
