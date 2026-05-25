@@ -104,10 +104,9 @@ a { color: inherit; }
    PORTADA — banner de ancho completo (debajo de la navegación)
    ============================================================ */
 .portada {
-    display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
+    display: block;
 }
 
 /* ============================================================
