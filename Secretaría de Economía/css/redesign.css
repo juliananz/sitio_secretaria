@@ -1,7 +1,9 @@
 /* ================================================================
    REDISEÑO — Hoja de estilos compartida (Módulo 1, POC)
    Secretaría de Economía de Coahuila
-   Branding bloqueado: header #DAAB06, nav/footer #BF8B00, 3 logos.
+   Tema claro: header/nav/footer en blanco/gris con acentos dorados
+   (#DAAB06 / #BF8B00). Branding modificado con autorización del titular;
+   los 3 logotipos blancos van sobre una franja dorada en el header.
    ================================================================ */
 
 /* ============================================================
@@ -55,14 +57,18 @@ a { color: inherit; }
 }
 
 /* ============================================================
-   HEADER — BLOQUEADO (3 logos, fondo dorado #DAAB06)
+   HEADER — fondo blanco con borde dorado inferior (acento).
+   Branding modificado con autorización del titular. Los 3
+   logotipos son blancos, por lo que van sobre una franja
+   dorada para que sigan siendo visibles sobre el blanco.
    ============================================================ */
 .header {
-    background-color: var(--gold);
+    background-color: var(--blanco);
+    border-bottom: 3px solid var(--gold);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.6rem 1rem;
+    padding: 0.8rem 1rem;
 }
 .header a {
     display: flex;
@@ -71,15 +77,19 @@ a { color: inherit; }
     gap: 4%;
     width: 100%;
     max-width: 1140px;
+    background-color: var(--gold); /* franja dorada tras los logos blancos */
+    padding: 0.5rem 1.75rem;
+    border-radius: 12px;
 }
 .header__logoss { width: 11%; max-width: 130px; height: auto; }
 .header__logos  { width: 39%; max-width: 430px; height: auto; }
 .header__logo   { width: 30%; max-width: 330px; height: auto; }
 
 /* ============================================================
-   NAVEGACIÓN — BLOQUEADA (fondo dorado oscuro, 8 enlaces)
+   NAVEGACIÓN — fondo blanco, texto gris, acento dorado.
+   Branding modificado con autorización del titular.
    ============================================================ */
-.nav-bg { background-color: var(--gold-dark); }
+.nav-bg { background-color: var(--blanco); border-bottom: 1px solid var(--borde); }
 .navegacion {
     display: flex;
     flex-wrap: wrap;
@@ -88,7 +98,7 @@ a { color: inherit; }
 }
 .navegacion a {
     display: block;
-    color: #1f1f1f;
+    color: #333;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95rem;
@@ -97,8 +107,8 @@ a { color: inherit; }
     padding: 0.95rem 1.1rem;
     transition: all 0.2s ease;
 }
-.navegacion a:hover { background-color: rgba(0,0,0,0.12); }
-.navegacion a.activo { box-shadow: inset 0 -3px 0 #1f1f1f; }
+.navegacion a:hover { background-color: rgba(218,171,6,0.10); box-shadow: inset 0 -3px 0 var(--gold); }
+.navegacion a.activo { box-shadow: inset 0 -3px 0 var(--gold); color: var(--gold-dark); }
 .icon-menu { display: none; }
 
 /* ============================================================
@@ -505,11 +515,13 @@ section { padding: 3.5rem 0; }
 }
 
 /* ============================================================
-   FOOTER — BLOQUEADO (fondo dorado oscuro, contacto institucional)
+   FOOTER — fondo gris claro, texto gris, acentos dorados.
+   Branding modificado con autorización del titular.
    ============================================================ */
 .footer {
-    background-color: var(--gold-dark);
-    color: #1f1f1f;
+    background-color: var(--fondo-suave);
+    color: #333;
+    border-top: 3px solid var(--gold);
     padding: 2.5rem 0 1.5rem;
     margin-top: 1rem;
 }
@@ -517,7 +529,7 @@ section { padding: 3.5rem 0; }
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    color: #1f1f1f; /* BLOQUEADO: texto oscuro sobre la barra dorada del pie */
+    color: #333; /* texto gris oscuro sobre el gris claro del pie */
 }
 .footer__cols {
     display: grid;
@@ -536,6 +548,8 @@ section { padding: 3.5rem 0; }
 .footer__redes {
     text-align: center;
     margin-top: 1.8rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid var(--borde); /* divisor con acento dorado */
 }
 .footer__redes a {
     display: inline-flex;
@@ -543,19 +557,19 @@ section { padding: 3.5rem 0; }
     justify-content: center;
     width: 42px; height: 42px;
     border-radius: 50%;
-    background-color: rgba(0,0,0,0.12);
-    color: #1f1f1f;
+    background-color: rgba(218,171,6,0.12); /* acento dorado tras el icono */
+    color: var(--gold-dark);
     margin: 0 0.3rem;
     font-size: 1.1rem;
     text-decoration: none;
     transition: all 0.2s ease;
 }
-.footer__redes a:hover { background-color: #1f1f1f; color: var(--gold); transform: translateY(-2px); }
+.footer__redes a:hover { background-color: var(--gold); color: var(--blanco); transform: translateY(-2px); }
 .footer__nota {
     text-align: center;
     font-size: 0.78rem;
     margin-top: 1.8rem;
-    color: rgba(0,0,0,0.55);
+    color: var(--texto-suave);
 }
 
 /* ============================================================
@@ -576,7 +590,7 @@ section { padding: 3.5rem 0; }
     .icon-menu {
         display: inline-flex;
         align-items: center;
-        color: #1f1f1f;
+        color: #333;
         font-size: 1.4rem;
         padding: 0.95rem 1.1rem;
         cursor: pointer;

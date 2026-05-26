@@ -65,6 +65,18 @@ across all changes unless explicitly authorized.
     layouts and downloadable PDFs.
 
 ### Changed
+- White/light header, nav and footer with gold accents in `css/redesign.css`
+  (**authorized exception** to the locked-branding constraint in `CLAUDE.md`,
+  approved by the lead). Header: white background with a gold (`#DAAB06`)
+  bottom border; the three header logos are white-only assets, so they sit on
+  a rounded gold accent strip to stay visible on white. Nav: white background,
+  `#333` link text, gold underline + faint gold tint on hover/active. Footer:
+  light-gray (`#F5F5F5`) background, `#333` text, gold top border, a gold
+  divider above the social row, and gold-accented social icons (gold-tinted
+  circle → solid gold with white glyph on hover). Note: dark/color variants
+  exist for the main logotype (`LOGOTIPO-PRINCIPAL.png`) and WEQ, but "A pasos
+  de gigante" is white-only; a full all-white header would need a dark "A
+  pasos" asset plus HTML `src` swaps (out of this CSS-only change).
 - Theme inversion in `css/redesign.css`: light theme on white (`#FFFFFF`)
   with light-gray alternating sections (`#F5F5F5`), body text dark gray
   (`#333`), and gold (`#DAAB06` / `#BF8B00`) for headings, section titles,
