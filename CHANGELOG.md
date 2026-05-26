@@ -19,6 +19,17 @@ across all changes unless explicitly authorized.
   administration branding overlays in the image are preserved.
 
 ### Fixed
+- Social media icons rendered as blank circles in the footer of every
+  `*-propuesta.html` page. Cause: Font Awesome was loaded via a **Kit**
+  (`kit.fontawesome.com/eb496ab1a0.js`), which is domain-locked and refuses
+  to load on non-whitelisted/`file://` origins, so no glyphs were injected —
+  only the circular `.footer__redes` link backgrounds remained visible. Fix:
+  switched all 21 pages to the origin-independent public Font Awesome 6
+  stylesheet on cdnjs. Also modernized the social links: `fa-twitter` →
+  `fa-x-twitter` (the X brand mark), each link given a descriptive
+  `aria-label` and its decorative `<i>` marked `aria-hidden="true"`, and the
+  YouTube link/icon removed (the account does not exist). Remaining links:
+  Facebook, X, Instagram.
 - Banner image was not loading (rendered as a thin broken-image strip). The
   asset filename on disk used a decomposed (NFD) accent while the HTML used a
   precomposed (NFC) `í`, so the byte sequences differed and the request 404'd.
