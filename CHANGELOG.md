@@ -10,6 +10,14 @@ across all changes unless explicitly authorized.
 
 ## [Unreleased] — branch `module-1-redesign-poc`
 
+### Removed
+- Removed the **CECCAV** and **Mapas Industriales** program cards from
+  `programas-propuesta.html` and deleted the two corresponding pages
+  (`CECCAV-propuesta.html`, `Mapas-propuesta.html`) from the repo. These were
+  the only links to those pages, so no dangling links remain. The CECCAV
+  content that lives inside `desarrollo-propuesta.html` (its own section plus
+  the external `ceccav.com` link) is unrelated and left untouched.
+
 ### Added
 - Favicon for every `*-propuesta.html` page. Generated `img/favicon.png`
   (32×32) by compositing the white institutional logotype
