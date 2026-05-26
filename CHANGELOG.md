@@ -11,6 +11,14 @@ across all changes unless explicitly authorized.
 ## [Unreleased] — branch `module-1-redesign-poc`
 
 ### Added
+- Favicon for every `*-propuesta.html` page. Generated `img/favicon.png`
+  (32×32) by compositing the white institutional logotype
+  (`img/LOGOTIPO-PRINCIPAL-BLANCO.png`) onto a gold (`#DAAB06`) background so
+  it stays visible on light browser tabs, and added
+  `<link rel="icon" type="image/png" href="img/favicon.png">` to each page
+  `<head>`. Note: the source is a wide logotype, so at 32px it renders as a
+  thin band; a dedicated square mark would read better and is flagged for
+  future work.
 - Added a full-width portada banner to `index-propuesta.html`, between the nav
   and the hero, mirroring how the production `index.html` uses it. Added a
   `.portada` rule to `css/redesign.css` (`width:100%; height:auto; display:block`
