@@ -8,13 +8,13 @@
    PALETA INSTITUCIONAL (bloqueada por branding)
    ============================================================ */
 :root {
-    --gold: #DAAB06;        /* primario */
-    --gold-dark: #BF8B00;   /* dorado oscuro */
-    --texto: #2b2b2b;
-    --texto-suave: #5c5c5c;
-    --borde: #e1e1e1;
-    --fondo-suave: #f7f7f7;
-    --blanco: #ffffff;
+    --gold: #DAAB06;        /* primario — títulos, acentos, botones */
+    --gold-dark: #BF8B00;   /* dorado oscuro — hovers, subtítulos, bordes */
+    --texto: #333333;       /* texto de cuerpo (gris oscuro) */
+    --texto-suave: #5c5c5c; /* texto secundario / introducciones */
+    --borde: #e6cf7a;       /* bordes y divisores en tono dorado claro */
+    --fondo-suave: #f5f5f5; /* secciones alternas (gris claro) */
+    --blanco: #ffffff;      /* fondo de página */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,7 +29,8 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 { font-weight: 700; line-height: 1.25; }
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.25; color: var(--gold); }
+h3, h4 { color: var(--gold-dark); } /* dorado oscuro: más legible en títulos pequeños */
 h2 { font-weight: 600; }
 p { margin-bottom: 1rem; }
 a { color: inherit; }
@@ -128,7 +129,7 @@ a { color: inherit; }
 .hero__inner { text-align: left; }
 .hero h1 {
     font-size: clamp(2rem, 5vw, 3.4rem);
-    color: var(--texto);
+    color: var(--gold);
     letter-spacing: -0.01em;
 }
 .hero .subtitulo {
@@ -425,14 +426,14 @@ section { padding: 3.5rem 0; }
     color: var(--texto-suave);
 }
 .placeholder i { font-size: 2rem; color: var(--gold); margin-bottom: 0.7rem; }
-.placeholder h3 { color: var(--texto); margin-bottom: 0.4rem; }
+.placeholder h3 { color: var(--gold-dark); margin-bottom: 0.4rem; }
 
 /* ---- Directorio ---- */
 .dir-area { margin-bottom: 2.5rem; }
 .dir-area h3 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
-    color: var(--texto);
+    color: var(--gold-dark);
     border-left: 4px solid var(--gold);
     padding-left: 0.7rem;
 }
@@ -489,7 +490,7 @@ section { padding: 3.5rem 0; }
     margin: 0 auto;
 }
 .prose p { color: var(--texto-suave); line-height: 1.85; margin-bottom: 1.2rem; }
-.prose h3 { font-size: 1.25rem; margin: 2rem 0 0.8rem; color: var(--texto); }
+.prose h3 { font-size: 1.25rem; margin: 2rem 0 0.8rem; color: var(--gold-dark); }
 .prose ul, .prose ol { color: var(--texto-suave); line-height: 1.85; padding-left: 1.4rem; margin-bottom: 1.2rem; }
 .prose li { margin-bottom: 0.4rem; }
 
@@ -516,6 +517,7 @@ section { padding: 3.5rem 0; }
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+    color: #1f1f1f; /* BLOQUEADO: texto oscuro sobre la barra dorada del pie */
 }
 .footer__cols {
     display: grid;

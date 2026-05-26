@@ -46,6 +46,18 @@ across all changes unless explicitly authorized.
     layouts and downloadable PDFs.
 
 ### Changed
+- Theme inversion in `css/redesign.css`: light theme on white (`#FFFFFF`)
+  with light-gray alternating sections (`#F5F5F5`), body text dark gray
+  (`#333`), and gold (`#DAAB06` / `#BF8B00`) for headings, section titles,
+  borders, dividers, accents, buttons and hovers. Display headings (`h1`,
+  `h2`, `.seccion-titulo`) use `#DAAB06`; smaller headings (`h3`/`h4`) use
+  the darker `#BF8B00` for legibility on white. Surface borders (`--borde`)
+  switched from neutral gray to a light gold tint. Locked branding is
+  untouched: the header bar stays `#DAAB06` with the three logos, the nav
+  bar `#BF8B00`, and the footer `#BF8B00` with dark contact text (an explicit
+  `.footer h3` color override keeps the footer heading dark, not gold).
+  Note: gold on white is below WCAG AA contrast for small text — acceptable
+  for large branded headings, flagged for review on smaller titles.
 - Extracted the inline `<style>` block from `index-propuesta.html` into a new
   shared stylesheet `css/redesign.css` (~400 lines). Pure refactor: the
   rendered page is unchanged. The stylesheet is now reusable by the other
