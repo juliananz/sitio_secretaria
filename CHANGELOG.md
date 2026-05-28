@@ -79,6 +79,12 @@ across all changes unless explicitly authorized.
     layouts and downloadable PDFs.
 
 ### Changed
+- `h1` color in `css/redesign.css` switched from `var(--gold)` (`#DAAB06`)
+  to `#333` (dark gray) for stronger contrast on the white background of
+  the redesign theme. Applied via a dedicated `h1` rule and by dropping
+  the `color: var(--gold)` override on `.hero h1` so it inherits the
+  global value. `h2`, `h3` and `h4` are deliberately left in their
+  current gold tones (`--gold` / `--gold-dark`).
 - White/light header, nav and footer with gold accents in `css/redesign.css`
   (**authorized exception** to the locked-branding constraint in `CLAUDE.md`,
   approved by the lead). Header: white background with a gold (`#DAAB06`)

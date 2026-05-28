@@ -34,6 +34,7 @@ body {
 h1, h2, h3, h4 { font-weight: 700; line-height: 1.25; color: var(--gold); }
 h3, h4 { color: var(--gold-dark); } /* dorado oscuro: más legible en títulos pequeños */
 h2 { font-weight: 600; }
+h1 { color: #333; } /* h1 en gris oscuro; h2/h3/h4 conservan el tono dorado */
 p { margin-bottom: 1rem; }
 a { color: inherit; }
 
@@ -139,7 +140,6 @@ a { color: inherit; }
 .hero__inner { text-align: left; }
 .hero h1 {
     font-size: clamp(2rem, 5vw, 3.4rem);
-    color: var(--gold);
     letter-spacing: -0.01em;
 }
 .hero .subtitulo {
