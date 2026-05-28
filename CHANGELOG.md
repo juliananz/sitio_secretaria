@@ -33,6 +33,12 @@ across all changes unless explicitly authorized.
   — full-width, responsive, proportions preserved). Path corrected to `img/…`
   (no root `img/` exists) and a descriptive `alt` added for accessibility;
   administration branding overlays in the image are preserved.
+- LinkedIn social link added to the footer of every `*-propuesta.html` page
+  (19 files), pointing to
+  `https://www.linkedin.com/company/secretaria-de-economia-de-coahuila/`.
+  Uses the `fa-linkedin-in` glyph and matches the existing
+  Facebook/X/Instagram pattern (target `_blank`, `rel="noopener"`,
+  descriptive `aria-label`, decorative `<i>` marked `aria-hidden="true"`).
 
 ### Fixed
 - Social media icons rendered as blank circles in the footer of every
