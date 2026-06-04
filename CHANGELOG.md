@@ -10,6 +10,12 @@ across all changes unless explicitly authorized.
 
 ## [Unreleased] — branch `module-1-redesign-poc`
 
+### Added
+- SUMA Coahuila program section as `suma/` subdirectory, visually homologated
+  with main redesign. Five pages: landing (`index.html`), Agenda, Coahuila
+  Provee, Directorio de Proveedores, and Impulso PyME. Form links and
+  directory data pending.
+
 ### Removed
 - Removed the **CECCAV** and **Mapas Industriales** program cards from
   `programas-propuesta.html` and deleted the two corresponding pages

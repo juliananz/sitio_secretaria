@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMA Coahuila — Secretaría de Economía de Coahuila</title>
+    <meta name="description" content="SUMA Coahuila: fortalecimiento de la economía mediante la integración de proveedores regionales en cadenas de suministro.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/redesign.css">
+
+    <style>
+        .suma-hero {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        .suma-hero__title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #DAAB06;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        .suma-hero__objetivo {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #333;
+        }
+        .suma-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .suma-card {
+            border-top: 4px solid #DAAB06;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .suma-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .suma-card h3 { color: #BF8B00; margin-bottom: 0.5rem; }
+        .suma-card p { color: #555; font-size: 0.95rem; }
+        .suma-card .area-mas { color: #DAAB06; font-weight: 600; font-size: 0.9rem; }
+        .suma-contacto { line-height: 1.8; }
+        .suma-contacto i { color: #DAAB06; width: 1.2em; margin-right: 0.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="aviso-preview">
+        VISTA PREVIA DE REDISEÑO — No es la versión en producción
+    </div>
+
+    <!-- ===== HEADER (BLOQUEADO) ===== -->
+    <header class="header">
+        <a href="../index-propuesta.html" aria-label="Secretaría de Economía de Coahuila — Inicio">
+            <img class="header__logoss" src="../img/A-PASOS-DE-GIGANTE_BLANCO.png" alt="A pasos de gigante">
+            <img class="header__logos" src="../img/LOGOTIPO-PRINCIPAL-BLANCO.png" alt="Gobierno de Coahuila">
+            <img class="header__logo" src="../img/WEQ.png" alt="WEQ">
+        </a>
+    </header>
+
+    <!-- ===== NAVEGACIÓN SUMA ===== -->
+    <div class="nav-bg">
+        <nav class="navegacion contenedor">
+            <span class="icon-menu" aria-hidden="true"><i class="fas fa-bars"></i></span>
+            <a href="../index-propuesta.html">← Volver a Secretaría de Economía</a>
+            <a href="index.html" class="activo">Inicio</a>
+            <a href="agenda.html">Agenda</a>
+            <a href="coahuila-provee.html">Coahuila Provee</a>
+            <a href="impulso-pyme.html">Impulso PyME</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </div>
+
+    <!-- ===== HERO SUMA ===== -->
+    <section class="suma-hero">
+        <div class="contenedor">
+            <!-- TODO: replace with actual SUMA logo asset when available -->
+            <div class="suma-hero__title">SUMA COAHUILA</div>
+            <p class="suma-hero__objetivo">
+                El Objetivo de SUMA es fortalecer la economía de Coahuila mediante la integración
+                de proveedores regionales en las cadenas de suministro de grandes empresas, a
+                través de estrategias focalizadas que impulsen su participación y contribuyan al
+                desarrollo regional sostenible, creando un círculo virtuoso de crecimiento económico.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== SECCIONES ===== -->
+    <section class="alt">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Programa SUMA</h2>
+            <div class="suma-cards">
+                <a class="card suma-card" href="agenda.html">
+                    <h3><i class="fas fa-calendar-days"></i> Agenda</h3>
+                    <p>Próximos eventos, talleres y conferencias.</p>
+                    <span class="area-mas">Ver agenda <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a class="card suma-card" href="coahuila-provee.html">
+                    <h3><i class="fas fa-link"></i> Coahuila Provee</h3>
+                    <p>Red de proveedores que vincula PyMEs regionales con grandes empresas.</p>
+                    <span class="area-mas">Conoce más <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <!-- TODO: migrate Comunidad content to main site later -->
+                <a class="card suma-card" href="https://dogfish-strawberry-545n.squarespace.com/" target="_blank" rel="noopener">
+                    <h3><i class="fas fa-newspaper"></i> Comunidad</h3>
+                    <p>Noticias y artículos de interés para PyMEs.</p>
+                    <span class="area-mas">Ver noticias <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a class="card suma-card" href="impulso-pyme.html">
+                    <h3><i class="fas fa-rocket"></i> Impulso PyME</h3>
+                    <p>Convenios y alianzas para fortalecer a las PyMEs.</p>
+                    <span class="area-mas">Ver convenios <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Contacto SUMA</h2>
+            <div class="card suma-contacto" style="max-width: 600px;">
+                <p><i class="fas fa-location-dot"></i>Periférico Luis Echeverría Álvarez No. 1560, Torre Saltillo Piso 4, Col. Guanajuato Oriente, C.P. 25286, Saltillo, Coahuila</p>
+                <p><i class="fas fa-clock"></i>Horario: 9:00 a.m. a 4:00 p.m.</p>
+                <p><i class="fas fa-phone"></i>+52 (844) 415-2162 Ext. 4852</p>
+                <p><i class="fas fa-phone"></i>+52 (844) 416-5274 Ext. 4852</p>
+                <p><i class="fas fa-envelope"></i><a href="mailto:alfredo.mandujano@coahuila.gob.mx">alfredo.mandujano@coahuila.gob.mx</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER (BLOQUEADO) ===== -->
+    <footer class="footer">
+        <div class="contenedor">
+            <h3>SECRETARÍA DE ECONOMÍA</h3>
+            <div class="footer__cols">
+                <div>
+                    <p class="titulo">Ubicación</p>
+                    <p>
+                        Periférico Luis Echeverría Álvarez No. 1560, Torre Saltillo Piso 12,
+                        Col. Guanajuato Oriente, C.P. 25286, Saltillo, Coahuila.
+                    </p>
+                </div>
+                <div>
+                    <p class="titulo">Teléfonos</p>
+                    <p>
+                        Horario de atención de 9:00 a.m. a 4:00 p.m.<br>
+                        +52 (844) 415-2162, 416-5274, 415-4053, 416-9179, 415-7936 Ext. 4800<br>
+                        (800) 718-4230
+                    </p>
+                </div>
+                <div>
+                    <p class="titulo">Correo</p>
+                    <p>despacho.sec@coahuila.gob.mx</p>
+                </div>
+            </div>
+            <div class="footer__redes">
+                <a href="https://www.facebook.com/SECdeCoahuila?mibextid=ZbWKwL" target="_blank" rel="noopener" aria-label="Facebook de la Secretaría de Economía"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/@SEC_Coahuila" target="_blank" rel="noopener" aria-label="X (antes Twitter) de la Secretaría de Economía"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/sec.coahuila?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener" aria-label="Instagram de la Secretaría de Economía"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/company/secretaria-de-economia-de-coahuila/" target="_blank" rel="noopener" aria-label="LinkedIn de la Secretaría de Economía"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            </div>
+            <p class="footer__nota">Vista previa de rediseño — contenido institucional sin cambios.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
