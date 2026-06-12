@@ -8,9 +8,10 @@ Dates use ISO 8601 (YYYY-MM-DD). Branding constraints defined in `CLAUDE.md`
 (header logos, institutional palette, footer, main navigation) are preserved
 across all changes unless explicitly authorized.
 
-## [Unreleased] — branch `module-1-redesign-poc`
+## [Unreleased] — branch `suma-integration`
 
 ### Added
+- Embedded Monday.com registration form directly in `coahuila-provee-propuesta.html`
 - SUMA Coahuila program section as `suma/` subdirectory, visually homologated
   with main redesign. Five pages: landing (`index.html`), Agenda, Coahuila
   Provee, Directorio de Proveedores, and Impulso PyME. Form links and
