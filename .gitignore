@@ -1,11 +1,38 @@
-# macOS junk
-__MACOSX/
-.DS_Store
-
-# Temp / build artifacts
-*.tmp
-_site/
-node_modules/
-
-# Quarantined (kept on disk, out of version control)
+# Carpetas de cuarentena (archivos huérfanos, no producción)
 _quarantine/
+*_quarantine/
+
+# Archivos del sistema
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Archivos temporales de editores
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Backups locales
+*.bak
+*.backup
+*.old
+
+# Archivos sensibles (por si acaso)
+.env
+.env.*
+*.key
+*.pem
+credentials*
+
+# Node modules (si llegaran a aparecer)
+node_modules/
+package-lock.json
+
+# Python cache (por si acaso)
+__pycache__/
+*.pyc
+
+# Archivos de log
+*.log
