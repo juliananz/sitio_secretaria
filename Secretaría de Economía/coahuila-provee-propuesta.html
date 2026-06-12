@@ -14,31 +14,16 @@
     <link rel="stylesheet" href="css/redesign.css">
 
     <style>
-        .suma-hero {
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-        .suma-hero__title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #DAAB06;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-        .suma-hero__objetivo {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #333;
-        }
+        html { scroll-behavior: smooth; }
+
+        /* ── Sub-nav ── */
         .suma-subnav {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.25rem 1.5rem;
             padding: 0.75rem 1rem;
-            background: #f8f8f8;
+            background: #fff;
             border-bottom: 2px solid #DAAB06;
             position: sticky;
             top: 0;
@@ -58,19 +43,279 @@
             color: #DAAB06;
             background: rgba(218, 171, 6, 0.08);
         }
-        .suma-card {
-            border-top: 4px solid #DAAB06;
-            padding: 1.5rem;
+
+        /* ── Hero ── */
+        .suma-hero-img {
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+            display: block;
         }
-        .suma-card h3 { color: #BF8B00; margin-bottom: 0.5rem; }
-        .suma-card p { color: #555; font-size: 0.95rem; }
-        .suma-contacto { line-height: 1.8; }
-        .suma-contacto i { color: #DAAB06; width: 1.2em; margin-right: 0.5rem; }
-        .evento-fecha {
+        .suma-hero-text {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            font-size: 1.35rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        .suma-hero-text .gold { color: #DAAB06; font-weight: 700; }
+
+        /* ── Section common ── */
+        .suma-section { padding: 4rem 1.5rem; }
+        .suma-section.alt { background: #F5F5F5; }
+        .suma-label {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            color: #DAAB06;
+            margin-bottom: 1rem;
+        }
+        .suma-section .seccion-titulo {
+            margin-bottom: 0.75rem;
+        }
+        .suma-section .seccion-intro {
+            margin-bottom: 2rem;
+        }
+
+        /* ── Event cards ── */
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .event-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .event-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .event-card__body { padding: 1.25rem 1.5rem; }
+        .event-card__date {
+            color: #DAAB06;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .event-card__body h3 {
+            color: #333;
+            font-size: 1.15rem;
+            margin: 0 0 0.5rem;
+        }
+        .event-card__body p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ── CTA buttons ── */
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .cta-row .btn {
+            min-width: 220px;
+            text-align: center;
+        }
+
+        /* ── Accordion ── */
+        .suma-accordion { max-width: 800px; margin: 0 auto 2.5rem; }
+        .suma-accordion details {
+            border-bottom: 1px solid #e0d9c0;
+            margin-bottom: 0;
+        }
+        .suma-accordion summary {
+            cursor: pointer;
+            padding: 1.1rem 2rem 1.1rem 0;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #333;
+            list-style: none;
+            position: relative;
+        }
+        .suma-accordion summary::-webkit-details-marker { display: none; }
+        .suma-accordion summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.85rem;
+            color: #DAAB06;
+            transition: transform 0.2s;
+        }
+        .suma-accordion details[open] summary::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        .suma-accordion summary:hover { color: #DAAB06; }
+        .suma-accordion .accordion-body {
+            padding: 0 0 1.25rem;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.98rem;
+        }
+        .suma-accordion .accordion-body strong { color: #BF8B00; }
+
+        /* ── News cards ── */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .news-card {
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .news-card--text {
+            border-left: 4px solid #DAAB06;
+        }
+        .news-card__body {
+            padding: 1.25rem 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .news-badge {
+            display: inline-block;
+            background: #DAAB06;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.65rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            width: fit-content;
+        }
+        .news-card__body h3 {
+            color: #333;
+            font-size: 1.05rem;
+            margin: 0 0 0.75rem;
+        }
+        .news-card__body .read-more {
             color: #DAAB06;
             font-weight: 600;
             font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            text-decoration: none;
+            margin-top: auto;
+        }
+        .news-card__body .read-more:hover { text-decoration: underline; }
+
+        /* ── Featured card ── */
+        .featured-card {
+            max-width: 700px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .featured-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .featured-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        .featured-card__body {
+            padding: 1.5rem;
+        }
+        .featured-card__body h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin: 0 0 0.75rem;
+        }
+        .featured-card__body .read-more {
+            color: #DAAB06;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .featured-card__body .read-more:hover { text-decoration: underline; }
+
+        /* ── Contact ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .contact-info { line-height: 1.9; color: #555; }
+        .contact-info i { color: #DAAB06; width: 1.4em; margin-right: 0.5rem; }
+        .contact-info a { color: #DAAB06; }
+        .contact-info p { margin-bottom: 0.5rem; }
+        .contact-social {
+            display: flex;
+            gap: 1rem;
+            padding-top: 1rem;
+        }
+        .contact-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(218, 171, 6, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #DAAB06;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .contact-social a:hover {
+            background: #DAAB06;
+            color: #fff;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .event-grid,
+            .news-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .suma-hero-img { height: 40vh; }
+            .suma-hero-text { font-size: 1.15rem; padding: 2.5rem 1rem; }
         }
     </style>
 </head>
@@ -105,51 +350,87 @@
         </nav>
     </div>
 
-    <!-- ===== HERO SUMA ===== -->
-    <section class="suma-hero">
-        <div class="contenedor">
-            <div class="suma-hero__title">SUMA COAHUILA</div>
-            <p class="suma-hero__objetivo">
-                El Objetivo de SUMA es fortalecer la economía de Coahuila mediante la integración
-                de proveedores regionales en las cadenas de suministro de grandes empresas, a
-                través de estrategias focalizadas que impulsen su participación y contribuyan al
-                desarrollo regional sostenible, creando un círculo virtuoso de crecimiento económico.
-            </p>
-        </div>
-    </section>
-
-    <!-- ===== SUB-NAVEGACIÓN (anclas) ===== -->
-    <nav class="suma-subnav" aria-label="Secciones de Coahuila Provee">
-        <a href="#provee">Coahuila Provee</a>
-        <a href="#directorio">Directorio</a>
+    <!-- ===== SUB-NAVEGACIÓN SUMA ===== -->
+    <nav class="suma-subnav" aria-label="Secciones SUMA Coahuila">
         <a href="#agenda">Agenda</a>
-        <a href="#impulso">Impulso PyME</a>
+        <a href="#coahuilaprovee">Coahuila Provee</a>
         <a href="#comunidad">Comunidad</a>
+        <a href="#impulsopyme">Impulso PyME</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
-    <!-- ===== COAHUILA PROVEE ===== -->
-    <section id="provee">
+    <!-- ===== 1. HERO ===== -->
+    <section id="hero">
+        <img class="suma-hero-img" src="img/suma-hero.jpg" alt="Gobernador de Coahuila visitando planta automotriz">
+        <div class="suma-hero-text">
+            El <span class="gold">Objetivo de SUMA</span> es fortalecer la economía de <span class="gold">Coahuila</span> mediante la integración de proveedores regionales en las cadenas de suministro de grandes empresas, a través de estrategias focalizadas que impulsen su participación y contribuyan al <span class="gold">desarrollo regional</span> sostenible, creando un círculo virtuoso de crecimiento económico.
+        </div>
+    </section>
+
+    <!-- ===== 2. AGENDA ===== -->
+    <section id="agenda" class="suma-section">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Agenda</h2>
+            <p class="seccion-intro">Descubre las oportunidades que impulsan el desarrollo económico en Coahuila. Aquí encontrarás los próximos eventos, talleres y conferencias diseñados para fortalecer la competitividad y la innovación en nuestro estado.</p>
+            <div class="suma-label">Eventos SUMA</div>
+
+            <div class="event-grid">
+                <!-- TODO: link to event page when created -->
+                <a class="event-card" href="#">
+                    <img src="img/suma-evento-simposium.jpg" alt="Simposium Proveedores">
+                    <div class="event-card__body">
+                        <div class="event-card__date">8 de diciembre de 2025</div>
+                        <h3>Simposium Proveedores</h3>
+                    </div>
+                </a>
+
+                <!-- TODO: link to event page when created -->
+                <a class="event-card" href="#">
+                    <img src="img/suma-evento-valeria-moy.jpg" alt="Directora IMCO: Valeria Moy">
+                    <div class="event-card__body">
+                        <div class="event-card__date">24 de noviembre de 2025</div>
+                        <h3>Directora IMCO: Valeria Moy</h3>
+                        <p>Un espacio convocado para la comunidad empresarial. COPARMEX Laguna te invita a la conferencia de Valeria Moy, reconocida economista y Directora General del Instituto Mexicano para la Competitividad (IMCO).</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 3. COAHUILA PROVEE ===== -->
+    <section id="coahuilaprovee" class="suma-section alt">
         <div class="contenedor">
             <h2 class="seccion-titulo">Coahuila Provee</h2>
-            <p class="seccion-intro">Red de proveedores que vincula PyMEs regionales con grandes empresas.</p>
+            <div class="suma-label">Red de Proveedores</div>
 
-            <div class="grid-cards" style="margin-bottom: 2rem;">
-                <div class="card suma-card">
-                    <h3><i class="fas fa-circle-question"></i> ¿Qué es la Red de Proveedores?</h3>
-                    <p>Herramienta que vincula Empresas Regionales con grandes Empresas Compradoras.</p>
-                </div>
-                <div class="card suma-card">
-                    <h3><i class="fas fa-user-check"></i> ¿Quién puede participar?</h3>
-                    <p>PyMEs formalmente constituidos con actividad de interés en la Industria.</p>
-                </div>
-                <div class="card suma-card">
-                    <h3><i class="fas fa-clipboard-check"></i> Información adicional</h3>
-                    <p>Validamos la información compartida en la Dirección de Proveeduría Local de la Secretaría de Economía para tu inclusión en el Directorio.</p>
-                </div>
+            <div class="cta-row">
+                <a href="#registro-form" class="btn">Registra tu Empresa</a>
+                <!-- TODO: link to supplier directory when data available -->
+                <a href="#directorio" class="btn">Explora la Red de Proveedores</a>
             </div>
 
-            <div class="form-embed-container" style="margin: 2rem auto; max-width: 800px;">
+            <div class="suma-accordion">
+                <details>
+                    <summary>¿Qué es la Red de Proveedores?</summary>
+                    <div class="accordion-body">
+                        Es una <strong>herramienta</strong> que tiene como finalidad acercar y vincular a las <strong>Empresas Regionales</strong> con las grandes <strong>Empresas Compradoras</strong>.
+                    </div>
+                </details>
+                <details>
+                    <summary>¿Quién puede participar?</summary>
+                    <div class="accordion-body">
+                        <strong>Todos</strong> los <strong>PyMEs</strong> que estén formalmente constituidos y que se dediquen a alguna actividad de interés en la <strong>Industria</strong>.
+                    </div>
+                </details>
+                <details>
+                    <summary>Información Adicional</summary>
+                    <div class="accordion-body">
+                        Una vez se envíe el registro, <strong>validaremos</strong> la información compartida en la Dirección de Proveeduría Local de la Secretaría de Economía del Estado de Coahuila, para dar paso a su <strong>inclusión en el Directorio</strong>.
+                    </div>
+                </details>
+            </div>
+
+            <div id="registro-form" style="margin: 3rem auto; max-width: 800px;">
                 <h3 style="text-align: center; color: #BF8B00; margin-bottom: 1rem;">Registra tu Empresa</h3>
                 <p style="text-align: center; margin-bottom: 1.5rem;">Completa el siguiente formulario para sumarte a la Red de Proveedores de Coahuila.</p>
                 <iframe
@@ -162,93 +443,96 @@
                     title="Formulario de registro Coahuila Provee">
                 </iframe>
             </div>
-
-            <div style="text-align: center;">
-                <a href="#directorio" class="btn"><i class="fas fa-magnifying-glass"></i> Explora la Red de Proveedores</a>
-            </div>
         </div>
     </section>
 
-    <!-- ===== DIRECTORIO DE PROVEEDORES ===== -->
-    <section id="directorio" class="alt">
-        <div class="contenedor">
-            <h2 class="seccion-titulo">Directorio de Proveedores</h2>
-
-            <div class="card" style="border-top: 4px solid #DAAB06; padding: 2rem; text-align: center; max-width: 600px;">
-                <i class="fas fa-database" style="font-size: 2.5rem; color: #DAAB06; margin-bottom: 1rem; display: block;"></i>
-                <p style="font-size: 1.1rem; color: #555;">
-                    El directorio se actualizará próximamente con las empresas registradas en la
-                    Red de Proveedores SUMA Coahuila.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== AGENDA ===== -->
-    <section id="agenda">
-        <div class="contenedor">
-            <h2 class="seccion-titulo">Agenda SUMA</h2>
-            <p class="seccion-intro">Próximos eventos, talleres y conferencias del programa SUMA Coahuila.</p>
-
-            <div class="grid-2">
-                <div class="card suma-card">
-                    <p class="evento-fecha">
-                        <i class="fas fa-calendar"></i> 8 de diciembre de 2025
-                    </p>
-                    <h3>Simposium Proveedores</h3>
-                    <p>Evento de vinculación entre proveedores regionales y grandes empresas compradoras en Coahuila.</p>
-                    <p style="color: #888; font-style: italic; font-size: 0.9rem;">Próximamente más información.</p>
-                </div>
-
-                <div class="card suma-card">
-                    <p class="evento-fecha">
-                        <i class="fas fa-calendar"></i> 24 de noviembre de 2025
-                    </p>
-                    <h3>Conferencia Valeria Moy (IMCO)</h3>
-                    <p>Conferencia sobre competitividad y desarrollo económico regional con perspectiva de datos.</p>
-                    <p style="color: #888; font-style: italic; font-size: 0.9rem;">Próximamente más información.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== IMPULSO PYME ===== -->
-    <section id="impulso" class="alt">
-        <div class="contenedor">
-            <h2 class="seccion-titulo">Impulso PyME</h2>
-            <p class="seccion-intro">Convenios y alianzas estratégicas para fortalecer a las PyMEs coahuilenses.</p>
-
-            <div class="card suma-card" style="max-width: 600px;">
-                <h3><i class="fas fa-truck-fast"></i> Convenio FedEx</h3>
-                <p>Convenio con FedEx para impulsar la logística de PyMEs coahuilenses. Próximamente más información.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== COMUNIDAD ===== -->
-    <section id="comunidad">
+    <!-- ===== 4. COMUNIDAD ===== -->
+    <section id="comunidad" class="suma-section">
         <div class="contenedor">
             <h2 class="seccion-titulo">Comunidad</h2>
-            <p class="seccion-intro">Noticias y artículos de interés para PyMEs.</p>
+            <p class="seccion-intro">Información de relevancia para PyMEs y público en general</p>
+            <div class="suma-label">Featured</div>
 
-            <a class="card suma-card" href="https://dogfish-strawberry-545n.squarespace.com/" target="_blank" rel="noopener" style="display: block; max-width: 600px; text-decoration: none; color: inherit;">
-                <h3><i class="fas fa-newspaper"></i> Portal de Noticias SUMA</h3>
-                <p>Artículos, noticias y recursos de interés para la comunidad empresarial de Coahuila.</p>
-                <span style="color: #DAAB06; font-weight: 600; font-size: 0.9rem;">Ver noticias <i class="fas fa-arrow-right"></i></span>
-            </a>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="img/suma-noticia-norcast.jpg" alt="Inauguración Norcast">
+                    <div class="news-card__body">
+                        <span class="news-badge">Noticias</span>
+                        <h3>Inauguración Norcast</h3>
+                        <!-- TODO: link to news article -->
+                        <a href="#" class="read-more">Leer más &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="img/suma-noticia-eran.jpg" alt="Anuncio de inversión: Eran Industrial">
+                    <div class="news-card__body">
+                        <span class="news-badge">Noticias</span>
+                        <h3>Anuncio de inversión: Eran Industrial</h3>
+                        <!-- TODO: link to news article -->
+                        <a href="#" class="read-more">Leer más &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="news-card news-card--text">
+                    <div class="news-card__body">
+                        <span class="news-badge">Noticias</span>
+                        <h3>Determinar si califica como producto originario bajo los criterios del T-MEC</h3>
+                        <!-- TODO: link to news article and add image when available -->
+                        <a href="#" class="read-more">Leer más &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="news-card news-card--text">
+                    <div class="news-card__body">
+                        <span class="news-badge">Noticias</span>
+                        <h3>Ideas para prospectar clientes nuevos en Coahuila</h3>
+                        <!-- TODO: link to news article and add image when available -->
+                        <a href="#" class="read-more">Leer más &rarr;</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- ===== CONTACTO ===== -->
-    <section id="contacto" class="alt">
+    <!-- ===== 5. IMPULSO PYME ===== -->
+    <section id="impulsopyme" class="suma-section alt">
         <div class="contenedor">
-            <h2 class="seccion-titulo">Contacto SUMA</h2>
-            <div class="card suma-contacto" style="max-width: 600px;">
-                <p><i class="fas fa-location-dot"></i>Periférico Luis Echeverría Álvarez No. 1560, Torre Saltillo Piso 4, Col. Guanajuato Oriente, C.P. 25286, Saltillo, Coahuila</p>
-                <p><i class="fas fa-clock"></i>Horario: 9:00 a.m. a 4:00 p.m.</p>
-                <p><i class="fas fa-phone"></i>+52 (844) 415-2162 Ext. 4852</p>
-                <p><i class="fas fa-phone"></i>+52 (844) 416-5274 Ext. 4852</p>
-                <p><i class="fas fa-envelope"></i><a href="mailto:alfredo.mandujano@coahuila.gob.mx">alfredo.mandujano@coahuila.gob.mx</a></p>
+            <h2 class="seccion-titulo">Impulso PyME</h2>
+            <div class="suma-label">Featured</div>
+
+            <div class="featured-card">
+                <img src="img/suma-convenio-fedex.jpg" alt="Convenio FedEx">
+                <div class="featured-card__body">
+                    <h3>Convenio FedEx</h3>
+                    <!-- TODO: link to convenio details from Alfredo -->
+                    <a href="#" class="read-more">Leer más &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 6. CONTACTO ===== -->
+    <section id="contacto" class="suma-section">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Contacto</h2>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><i class="fas fa-location-dot" aria-hidden="true"></i>Periférico Luis Echeverría Álvarez No. 1560, Torre Saltillo Piso 4, Col. Guanajuato Oriente, C.P. 25286, Saltillo, Coahuila</p>
+                    <p><i class="fas fa-clock" aria-hidden="true"></i>Horario: 9:00 a.m. a 4:00 p.m.</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i>+52 (844) 415-2162 Ext. 4852</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i>+52 (844) 416-5274 Ext. 4852</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:alfredo.mandujano@coahuila.gob.mx">alfredo.mandujano@coahuila.gob.mx</a></p>
+                </div>
+                <div>
+                    <div class="contact-social">
+                        <a href="https://www.facebook.com/SECdeCoahuila?mibextid=ZbWKwL" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com/@SEC_Coahuila" target="_blank" rel="noopener" aria-label="X (antes Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/sec.coahuila?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/company/secretaria-de-economia-de-coahuila/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

@@ -10,6 +10,9 @@ across all changes unless explicitly authorized.
 
 ## [Unreleased] — branch `suma-integration`
 
+### Changed
+- Coahuila Provee page rewritten to replicate SUMA Coahuila layout (hero, agenda, accordion, news grid, FedEx convenio, contacto). 6 images referenced in img/. TODOs preserved for event pages, news articles, supplier directory.
+
 ### Added
 - Embedded Monday.com registration form directly in `coahuila-provee-propuesta.html`
 - SUMA Coahuila program section as `suma/` subdirectory, visually homologated
